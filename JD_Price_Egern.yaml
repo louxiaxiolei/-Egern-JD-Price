@@ -1,0 +1,30 @@
+name: "京东比价"
+description: "在京东商品页面显示慢慢买历史价格；先打开慢慢买 App 获取 CK"
+author: "Egern adaptation"
+homepage: "https://egernapp.com"
+
+# 使用前：把下面两处 script_url 替换成你上传后的 JD_Price_Egern.js RAW 直链
+scriptings:
+  - http_request:
+      name: "京东比价 - 捕获令牌"
+      match: "^https?://apapia-sqk-weblogic\\.manmanbuy\\.com/baoliao/center/menu$"
+      script_url: "https://raw.githubusercontent.com/你的GitHub用户名/你的仓库/main/JD_Price_Egern.js"
+      update_interval: 86400
+      max_size: 1048576
+      timeout: 10
+      body_required: true
+
+  - http_response:
+      name: "京东比价 - 历史价格"
+      match: "^https?://in\\.m\\.jd\\.com/product/graphext/\\d+\\.html$"
+      script_url: "https://raw.githubusercontent.com/你的GitHub用户名/你的仓库/main/JD_Price_Egern.js"
+      update_interval: 86400
+      max_size: 4194304
+      timeout: 30
+      body_required: true
+
+mitm:
+  hostnames:
+    includes:
+      - "in.m.jd.com"
+      - "apapia-sqk-weblogic.manmanbuy.com"
