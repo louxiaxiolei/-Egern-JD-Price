@@ -8,7 +8,7 @@ scriptings:
   - http_request:
       name: "京东比价 - 捕获令牌"
       match: "^https?://apapia-sqk-weblogic\\.manmanbuy\\.com/baoliao/center/menu$"
-      script_url: "https://raw.githubusercontent.com/你的GitHub用户名/你的仓库/main/JD_Price_Egern.js"
+      script_url: "https://raw.githubusercontent.com/louxiaxiolei/Egern-JD-Price/refs/heads/main/JD_Price_Egern.js"
       update_interval: 86400
       max_size: 1048576
       timeout: 10
@@ -17,7 +17,7 @@ scriptings:
   - http_response:
       name: "京东比价 - 历史价格"
       match: "^https?://in\\.m\\.jd\\.com/product/graphext/\\d+\\.html$"
-      script_url: "https://raw.githubusercontent.com/你的GitHub用户名/你的仓库/main/JD_Price_Egern.js"
+      script_url: "https://raw.githubusercontent.com/louxiaxiolei/Egern-JD-Price/refs/heads/main/JD_Price_Egern.js"
       update_interval: 86400
       max_size: 4194304
       timeout: 30
