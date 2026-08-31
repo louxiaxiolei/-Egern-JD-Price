@@ -16,7 +16,7 @@ scriptings:
 
   - http_response:
       name: "京东比价 - 历史价格"
-      match: "match: "^https?://in\\.m\\.jd\\.com/product/graphext/\\d+\\.html(?:\\?.*)?$"
+      match: "match: "match: "^https?://in\\.m\\.jd\\.com/product/graphext/\\d+\\.html"
       script_url: "https://raw.githubusercontent.com/louxiaxiolei/Egern-JD-Price/refs/heads/main/JD_Price_Egern.js"
       update_interval: 86400
       max_size: 4194304
